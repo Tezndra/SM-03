@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTSYME</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #0c0202;
+            /* Set text color */
+            overflow: hidden;
+            /* Hide any content that overflows */
+        }
+        
+        .bottom-video {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            /* Place the video behind other content */
+            opacity: 0;
+            /* Initially hide the video */
+            transition: opacity 1s ease;
+            /* Add smooth transition effect */
+        }
+        
+        .bottom-video.active {
+            opacity: 1;
+            /* Make the video visible */
+        }
+        
+        .website-content {
+            position: relative;
+            z-index: 1;
+            /* Ensure the content appears above the video */
+            display: flex;
+            justify-content: space-between;
+            /* Align items horizontally */
+            align-items: center;
+            /* Center items vertically */
+            padding: 20px;
+            /* Adjusted padding */
+            padding-bottom: 60px;
+            /* Add padding to account for button height */
+        }
+        
+        .website-name {
+            /* Padding removed */
+        }
+        
+        .buttons {
+            /* Padding removed */
+        }
+        
+        .buttons a {
+            color: #f5f0f0;
+            text-decoration: none;
+            margin: 0 10px;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .buttons a:hover {
+            background-color: #040404;
+            color: #ffffff;
+        }
+        
+        .content {
+            padding: 20px;
+            text-align: justify;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .content h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .content p {
+            color: #ffffff;
+            font-size: 20px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        /* Animation for heading */
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .animated-heading {
+            animation: fadeIn 1.5s ease forwards;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Your website content -->
+    <div class="website-content">
+        <div class="website-name">
+            <h1>SPORTSYME</h1>
+        </div>
+        <div class="buttons">
+            <a href="Body.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="developers.html">Developers</a>
+            <!-- Directly link to developers.html page -->
+        </div>
+    </div>
+    <video class="bottom-video" autoplay muted loop>
+        <source src="dark1.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+
+    <video class="bottom-video active" autoplay muted loop>
+        <source src="bb.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+
+    <video class="bottom-video" autoplay muted loop>
+        <source src="football.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+
+
+    <video class="bottom-video" autoplay muted loop>
+        <source src="Dark2.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+    <video class="bottom-video" autoplay muted loop>
+        <source src="dark1.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // JavaScript to switch between background videos
+        const videos = document.querySelectorAll('.bottom-video');
+
+        let index = 0; // Index of the currently active video
+
+        setInterval(() => {
+            // Hide the current video
+            videos[index].classList.remove('active');
+
+
+            index = (index + 1) % videos.length;
+
+
+            videos[index].classList.add('active');
+        }, 5000);
+    </script>
+    <div class="content">
+        <b><u><h2 align="center">About us</h2></u></b>
+        <p class="animated-heading">Sportsyme is an innovative web-based platform aimed at transforming the sports viewing experience for enthusiasts worldwide. In today's fast-paced world, accessing information about sporting events and finding reliable live streaming links can
+            be challenging and time-consuming. Sportsyme addresses this issue by providing a centralized hub where users can conveniently discover today's sporting events across a wide range of disciplines, from cricket to football to basketball and beyond.
+            With a user-friendly interface, Sportsyme offers detailed match listings that include essential information such as participating teams, start times, and previews, ensuring that users stay informed about upcoming games.One of the key features
+            of Sportsyme is its curated selection of live streaming links for each match, sourced from official broadcasters and streaming platforms. This eliminates the need for users to search through multiple sources to find a reliable way to watch
+            their favourite games live. Additionally, Sportsyme incorporates time zone conversion functionality, allowing users from different regions to view match schedules accurately based on their local time zone. This global coverage ensures that
+            sports fans from around the world can easily follow their favorite teams and players without missing a beat.</p>
+    </div>
+
+</body>
+
+</html>

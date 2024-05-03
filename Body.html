@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPORTSYME</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #f9f9f9;
+            /* Set text color */
+            overflow: hidden;
+            /* Hide any content that overflows */
+        }
+        
+        .bottom-video {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+            /* Place the video behind other content */
+            opacity: 0;
+            /* Initially hide the video */
+            transition: opacity 1s ease;
+            /* Add smooth transition effect */
+        }
+        
+        .bottom-video.active {
+            opacity: 1;
+            /* Make the video visible */
+        }
+        
+        .website-content {
+            position: relative;
+            z-index: 1;
+            /* Ensure the content appears above the video */
+            display: flex;
+            justify-content: space-between;
+            /* Align items horizontally */
+            align-items: center;
+            /* Center items vertically */
+            padding: 20px;
+            /* Adjusted padding */
+            padding-bottom: 60px;
+            /* Add padding to account for button height */
+        }
+        
+        .website-name {
+            /* Padding removed */
+        }
+        
+        .buttons {
+            /* Padding removed */
+        }
+        
+        .buttons a {
+            color: #f5f0f0;
+            text-decoration: none;
+            margin: 0 10px;
+            border: 2px solid #f6f5f5;
+            border-radius: 10px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .buttons a:hover {
+            background-color: #040404;
+            color: #f4f0f0;
+        }
+        
+        .content {
+            padding: 20px;
+        }
+        
+        .content ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .content ul li {
+            margin-bottom: 10px;
+        }
+        
+        .content ul li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #f7f4f4;
+            border: 2px solid #f0eded;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .content ul li a:hover {
+            background-color: #ddd;
+        }
+        /* Animation for website name and buttons */
+        
+        .website-name:hover,
+        .buttons:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Your website content -->
+    <div class="website-content">
+        <div class="website-name">
+            <h1>SPORTSYME</h1>
+        </div>
+        <div class="buttons">
+            <a href="#">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="developers.html">Developers</a>
+            <!-- Directly link to developers.html page -->
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Choose Your Sport</h2>
+        <ul>
+            <li><a href="#">Cricket</a></li>
+            <li><a href="#">Soccer</a></li>
+            <li><a href="#">Hockey</a></li>
+            <li><a href="#">Tennis</a></li>
+            <li><a href="#">Basketball</a></li>
+            <li><a href="#">Volleyball</a></li>
+            <li><a href="#">Baseball</a></li>
+            <li><a href="#">Rugby</a></li>
+            <li><a href="#">Golf</a></li>
+            <li><a href="#">Kabbadi</a></li>
+        </ul>
+    </div>
+
+    <!-- Animation videos -->
+    <video class="bottom-video active" autoplay muted loop>
+        <source src="bb.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+    <video class="bottom-video" autoplay muted loop>
+        <source src="Hockey.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+    <video class="bottom-video" autoplay muted loop>
+        <source src="cricket.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+    <video class="bottom-video" autoplay muted loop>
+        <source src="football.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+    <video class="bottom-video" autoplay muted loop>
+        <source src="golf.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+    <video class="bottom-video" autoplay muted loop>
+        <source src="tennis.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+    <video class="bottom-video" autoplay muted loop>
+        <source src="badminton.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+    <video class="bottom-video" autoplay muted loop>
+        <source src="kabaddi.mp4" type="video/mp4">
+        <!-- Include other video formats if needed -->
+        Your browser does not support the video tag.
+    </video>
+
+    <script>
+        // JavaScript to switch between background videos
+        const videos = document.querySelectorAll('.bottom-video');
+
+        let index = 0; // Index of the currently active video
+
+        setInterval(() => {
+            // Hide the current video
+            videos[index].classList.remove('active');
+
+            // Move to the next video
+            index = (index + 1) % videos.length;
+
+            // Show the next video
+            videos[index].classList.add('active');
+        }, 5000); // Change the video every 5 seconds
+    </script>
+
+</body>
+
+</html>

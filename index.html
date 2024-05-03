@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sportysme</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <h2>Welcome to "Sportysme"</h2>
+
+            <label>
+                <span>Email</span>
+                <input type="email" />
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" />
+            </label>
+            <!-- Changed the <p> tag to a button for the "Forgot Password" functionality -->
+            <button type="button" class="forgot-pass">Forgot password?</button>
+            <button type="button" class="submit">Sign In</button>
+            <!-- Added a "Skip" option -->
+            <button type="button" class="skip">Skip</button>
+        </div>
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                    <h3>Don't have an account? Please Sign up!</h3>
+                </div>
+                <div class="img__text m--in">
+                    <h3>If you already have an account, just sign in.</h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                    <span class="m--in">Sign In</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>Join us!</h2>
+                <label>
+                    <span>Name</span>
+                    <input type="text" />
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" />
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" />
+                </label>
+                <button type="button" class="submit">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add JavaScript for "Forgot Password" functionality
+        document.querySelector('.forgot-pass').addEventListener('click', function() {
+            // Redirect to forgotpass.html when clicked
+            window.location.href = 'forgotpass.html';
+        });
+
+        // Add JavaScript for toggling between Sign In and Sign Up forms
+        document.querySelector('.img__btn').addEventListener('click', function() {
+            document.querySelector('.cont').classList.toggle('s--signup');
+        });
+
+        // Add JavaScript for "Skip" functionality
+        document.querySelector('.skip').addEventListener('click', function() {
+            // Redirect to Body.html when "Skip" is clicked
+            window.location.href = 'Body.html';
+        });
+    </script>
+</body>
+
+</html>
